@@ -10,3 +10,11 @@ variable age {
 variable users {
     type = list
 }
+
+variable usersage {
+    type = map(string)
+    default = {
+        ram = 10
+        shyam = 20
+    }
+}
