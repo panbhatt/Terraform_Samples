@@ -6,6 +6,7 @@ https://registry.terraform.io/providers/integrations/github/latest/docs
      all the plugin details.
     3. terraform plan -> will tell all the resources that needs to be created. 
     4. terraform apply -auto-approve -> it would apply the plan in the provider. 
+    5. terraform destrop -> it will delete all the resourcesas present in the .tfstate file.
 
 
 */
