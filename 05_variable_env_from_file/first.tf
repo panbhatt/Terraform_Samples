@@ -13,3 +13,6 @@ variable  username {
 output message {
     value = "Username -. ${var.username} Age -> ${var.age}"
 }
+
+
+// terraform plan -var-file=dev.tfvars

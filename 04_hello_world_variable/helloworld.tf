@@ -12,3 +12,6 @@ output printUpperName {
 output userage {
     value = " Age from map is -> ${lookup(var.usersage, "ram")}"
 }
+
+
+# terraform plan --var "username=pankajbhatt"

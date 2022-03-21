@@ -9,6 +9,7 @@ variable age {
 
 variable users {
     type = list
+    default = ["pankaj", "Abhinandnib", "sha"]
 }
 
 variable usersage {
