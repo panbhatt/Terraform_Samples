@@ -6,8 +6,14 @@ https://registry.terraform.io/providers/integrations/github/latest/docs
      all the plugin details.
     3. terraform plan -> will tell all the resources that needs to be created. 
     4. terraform apply -auto-approve -> it would apply the plan in the provider. 
-    5. terraform destrop -> it will delete all the resourcesas present in the .tfstate file.
-
+    5. terraform destroy -> it will delete all the resourcesas present in the .tfstate file.
+    6. terraform destroy --target github_repository <NAME_OF_RESOURCE>
+    7. terraform validate -> if your conifguration is valid will give success message
+    8. terraform refresh -> Change the tfstate from the resource . E.g. if the desc change sthere, it will chang eit here. 
+    9. terraform show -> show the TFState on console.
+    10. terraform output -> Print all the output names that are being generated once the resource is being created. 
+    11. terraform console -> used for debugging. read all the variables of Github Resources & your variables like var.username. Exit
+    12. terraform fmt -> Format the indentation
 
 */
 
@@ -23,14 +29,21 @@ terraform {
 
 
 provider "github" {
-token =  "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"
+  token = "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"
 }
 
 resource "github_repository" "terrform_created_first_Repo_GSBM" {
-  name = "TERRAFORM_GSBM_REPO"
+  name        = "TERRAFORM_GSBM_REPO"
   description = "My First Github Repo from the terraform Code .."
-  visibility = "public"
-  auto_init = true
+  visibility  = "public"
+  auto_init   = true
 }
 
- 
+/*
+ This out the reorganization of the source code in files.
+
+ */
+
+output "terraform-first-repo-url" {
+  value = github_repository.terrform_created_first_Repo_GSBM.html_url
+}
